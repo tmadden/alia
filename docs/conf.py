@@ -2,17 +2,21 @@ import sys
 import os
 import subprocess
 
-import sphinx_rtd_theme
-
 project = 'alia'
 copyright = '2021, .decimal, LLC & Mass General Brigham'
 author = 'Thomas Madden'
 
-extensions = ['breathe', 'sphinx_rtd_theme']
+import os
+on_rtd = os.environ.get('READTHEDOCS', None) == 'True'
 
 exclude_patterns = ['_build', '_doxygen']
 
-html_theme = 'sphinx_rtd_theme'
+extensions = ['breathe']
+
+if not on_rtd:
+    import sphinx_rtd_theme
+    extensions.append('sphinx_rtd_theme')
+    html_theme = 'sphinx_rtd_theme'
 
 breathe_projects = { "alia": "_doxygen/xml" }
 breathe_default_project = "alia"

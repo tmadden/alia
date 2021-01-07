@@ -7,5 +7,4 @@ This is the reference documentation for alia...
    :maxdepth: 2
    :caption: Contents
 
-.. doxygenfunction:: alia::mask
-
+.. doxygenfunction:: mask
