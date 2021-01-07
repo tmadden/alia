@@ -1,5 +1,6 @@
 .vscode
 .venv
 coverage.txt
+docs/_build
 /*build*
 debug.log
