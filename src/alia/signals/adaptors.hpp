@@ -327,10 +327,6 @@ simplify_id(Wrapped wrapped)
     return simplified_id_wrapper<Wrapped>(std::move(wrapped));
 }
 
-// mask(signal, availibility_flag) does the equivalent of bit masking on
-// individual signals. If :availibility_flag evaluates to true, the mask
-// evaluates to a signal equivalent to :signal. Otherwise, it evaluates to an
-// empty signal of the same type.
 template<class Primary, class Mask>
 struct masking_signal final
     : signal_wrapper<masking_signal<Primary, Mask>, Primary>
@@ -373,6 +369,14 @@ make_masking_signal(Signal signal, AvailabilityFlag availability_flag)
     return masking_signal<Signal, AvailabilityFlag>(
         std::move(signal), std::move(availability_flag));
 }
+
+/// Mask a signal.
+///
+/// This does the equivalent of bit-masking on an individual signal. If
+/// \p availibility_flag evaluates to true, the mask evaluates to a signal
+/// equivalent to \p signal. Otherwise, it evaluates to an empty signal of the
+/// same type.
+///
 template<class Signal, class AvailabilityFlag>
 auto
 mask(Signal signal, AvailabilityFlag availability_flag)

@@ -6,3 +6,6 @@ This is the reference documentation for alia...
 .. toctree::
    :maxdepth: 2
    :caption: Contents
+
+.. doxygenfunction:: alia::mask
+

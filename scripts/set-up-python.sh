@@ -5,4 +5,5 @@ set -x -e
 virtualenv --prompt="(alia) " "$@" .venv
 source .venv/bin/activate
 python --version
-pip install gcovr sphinx==3.3.1 breathe
+pip install gcovr
+pip install -r docs/requirements.txt

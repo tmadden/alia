@@ -21,6 +21,7 @@ typedef long long counter_type;
 // Inspired by Boost, inheriting from noncopyable disables copying for a type.
 // The namespace prevents unintended ADL if used by applications.
 namespace detail { namespace noncopyable_ {
+/// \internal
 struct noncopyable
 {
     noncopyable()

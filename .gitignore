@@ -2,5 +2,6 @@
 .venv
 coverage.txt
 docs/_build
+docs/_doxygen
 /*build*
 debug.log
